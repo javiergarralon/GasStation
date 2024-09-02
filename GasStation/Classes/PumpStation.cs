@@ -16,10 +16,17 @@ namespace GasStation.Classes
         {
             pumps = new List<IPump>();
             supplyHistory = new List<Supply>();
+
+            for (int i = 0; i < numberOfPumps; i++)
+            {
+                pumps.Add(new Pump(i + 1));
+            }
         }
 
         public void FreePump(int id)
         {
+            var pump = pumps.FirstOrDefault(p => p.Id == id);
+            pump?.Free();
         }
 
         public void SetPumpLimit(int id, decimal amount)
@@ -28,6 +35,8 @@ namespace GasStation.Classes
 
         public void BlockPump(int id)
         {
+            var pump = pumps.FirstOrDefault(p => p.Id == id);
+            pump?.Block();
         }
 
         public List<PumpStatus> GetPumpStatuses()
@@ -35,13 +44,21 @@ namespace GasStation.Classes
             return null;
         }
 
+        public IPump GetPump(int id)
+        {
+            return pumps.FirstOrDefault(p => p.Id == id);
+        }
+
         public void RecordSupply(Supply supply)
         {
+            supplyHistory.Add(supply);
         }
 
         public List<Supply> GetSupplyHistory()
         {
-            return null;
+            return supplyHistory
+            .ToList();
         }
+    }
     }
 }
