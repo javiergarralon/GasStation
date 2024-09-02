@@ -39,9 +39,9 @@ namespace GasStation.Classes
             pump?.Block();
         }
 
-        public List<PumpStatus> GetPumpStatuses()
+        public List<IPump> GetAllPumps()
         {
-            return null;
+            return pumps;
         }
 
         public IPump GetPump(int id)

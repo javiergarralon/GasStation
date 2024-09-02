@@ -12,7 +12,7 @@ namespace GasStation.Interfaces
         void FreePump(int id);
         void SetPumpLimit(int id, decimal amount);
         void BlockPump(int id);
-        List<PumpStatus> GetPumpStatuses();
+        List<IPump> GetAllPumps();
         IPump GetPump(int id);
         void RecordSupply(Supply supply);
         List<Supply> GetSupplyHistory();
