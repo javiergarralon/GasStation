@@ -100,7 +100,7 @@ Prueba técnica del funcionamiento de los Surtidores en Pista para una Estación
 
 **Pump_ShouldBeBlockedInitially** - *Verifica que todos los surtidores están bloqueados al inicio.*
 
-***FreePump_ShouldSetPumpToFreeState** - *Prueba que un surtidor pasa al estado libre cuando se libera.*
+**FreePump_ShouldSetPumpToFreeState** - *Prueba que un surtidor pasa al estado libre cuando se libera.*
 
 **BlockPump_ShouldBlockThePump** - *Verifica que un surtidor se bloquea correctamente.*
 
