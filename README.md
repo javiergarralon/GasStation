@@ -1,4 +1,4 @@
-<img align="center" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg/240px-Flag_of_the_United_Kingdom_%283-5%29.svg.png" alt="EN" height="15" width="25"/>&nbsp;<img align="center" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/300px-Flag_of_the_United_States.svg.png" alt="US" height="15" width="25"/>
+<img align="center" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg/240px-Flag_of_the_United_Kingdom_%283-5%29.svg.png" alt="EN" height="35" width="45"/>&nbsp;<img align="center" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/300px-Flag_of_the_United_States.svg.png" alt="US" height="35" width="45"/>
 # Gas Station - Technical Test 
 
 A technical test of the operation of Pumps on the Track for a Gas Station, consisting of a simple implementation of a track that can manage the pumps located within it.
@@ -57,7 +57,7 @@ A technical test of the operation of Pumps on the Track for a Gas Station, consi
 
 
 
-<img align="center" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Bandera_de_Espa%C3%B1a.svg/300px-Bandera_de_Espa%C3%B1a.svg.png" alt="ES" height="15" width="25"/>&nbsp; 
+<img align="center" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Bandera_de_Espa%C3%B1a.svg/300px-Bandera_de_Espa%C3%B1a.svg.png" alt="ES" height="35" width="45"/>&nbsp; 
 # Estación de Servicio - Prueba Técnica
 
 Prueba técnica del funcionamiento de los Surtidores en Pista para una Estación de Servicio que consiste en realizar una implementación sencilla de una pista que sea capaz de gobernar los surtidores que en ella se encuentran.
