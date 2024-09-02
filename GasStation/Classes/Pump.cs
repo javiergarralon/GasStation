@@ -38,15 +38,25 @@ namespace GasStation.Classes
 
         public void Dispense(decimal amountDispensed, IPumpStation pumpStation)
         {
-            if (Status == PumpStatus.Free || Status == PumpStatus.Prefixed)
+            if (Status == PumpStatus.Free)
             {
-                //Add to the RecordSupply
                 pumpStation.RecordSupply(new Supply
                 {
                     Pump = this,
                     DateTime = DateTime.Now,
                     PrefixedAmount = PrefixedAmount,
                     AmountDispensed = amountDispensed
+                });
+                Block();
+            }
+            else if(Status == PumpStatus.Prefixed)
+            {
+                pumpStation.RecordSupply(new Supply
+                {
+                    Pump = this,
+                    DateTime = DateTime.Now,
+                    PrefixedAmount = PrefixedAmount,
+                    AmountDispensed = PrefixedAmount.Value
                 });
                 Block();
             }
