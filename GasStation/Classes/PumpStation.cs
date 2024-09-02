@@ -59,7 +59,9 @@ namespace GasStation.Classes
         public List<Supply> GetSupplyHistory()
         {
             return supplyHistory
-            .ToList();
+                .OrderByDescending(x => x.DateTime)
+                .ThenBy(x => x.AmountDispensed)
+                .ToList();
         }
     }
 }

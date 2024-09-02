@@ -51,12 +51,14 @@ namespace GasStation.Classes
             }
             else if(Status == PumpStatus.Prefixed)
             {
+                var amount = amountDispensed > PrefixedAmount ? PrefixedAmount : amountDispensed;
+
                 pumpStation.RecordSupply(new Supply
                 {
                     Pump = this,
                     DateTime = DateTime.Now,
                     PrefixedAmount = PrefixedAmount,
-                    AmountDispensed = PrefixedAmount.Value
+                    AmountDispensed = amount.Value
                 });
                 Block();
             }
