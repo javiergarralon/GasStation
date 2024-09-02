@@ -31,6 +31,8 @@ namespace GasStation.Classes
 
         public void SetPumpLimit(int id, decimal amount)
         {
+            var pump = pumps.FirstOrDefault(p => p.Id == id);
+            pump?.SetLimit(amount);
         }
 
         public void BlockPump(int id)
@@ -59,6 +61,5 @@ namespace GasStation.Classes
             return supplyHistory
             .ToList();
         }
-    }
     }
 }
