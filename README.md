@@ -6,7 +6,9 @@ A technical test of the operation of Pumps on the Track for a Gas Station, consi
 ## Use of SOLID Principles
 
 **S (Single Responsibility Principle)**: *Each class and interface has a single responsibility (managing pumps or the station).*
+
 **O (Open/Closed Principle)**: *Classes can be extended without modifying their base code, facilitated by the use of interfaces.*
+
 **L (Liskov Substitution Principle)**: *Derived classes (such as those implementing interfaces) can be used without altering the expected functionality.*
 **I (Interface Segregation Principle)**: *Interfaces are divided according to the specific responsibilities of each entity.*
 **D (Dependency Inversion Principle)**: *Dependency is on abstractions (interfaces) rather than concrete implementations.*
