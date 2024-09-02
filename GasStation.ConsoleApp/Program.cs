@@ -6,7 +6,7 @@ class Program
     static void Main(string[] args)
     {
         {
-            // Create a PumpStation with 5 pumps
+            // PumpStation with 5 pumps
             IPumpStation pumpStation = new PumpStation(5);
 
             // Initial status of all pumps
@@ -21,7 +21,6 @@ class Program
             // Check status after free pump 1 and set limit on pump 2
             Console.WriteLine("\nPump Station status:");
             PrintPumpStatuses(pumpStation);
-
 
             // Attempt to dispense fuel
             Console.WriteLine("\nAttempt: Pump 1 - Dispense 85 euros | Pump 2 - 50 euros (prefixed into 20 only dispense 20)");
@@ -42,9 +41,16 @@ class Program
             pumpStation.FreePump(3);
             pumpStation.SetPumpLimit(3, 30m);
 
+            // Check status after setting limit pump 3
+            var pump3 = pumpStation.GetPump(3);
+            Console.WriteLine("\nStatus of pumps after setting limit pump 3");
+            PrintPumpStatuses(pumpStation);
+            Console.WriteLine($"\nPump {pump3.Id} PrefixedAmount: {pump3.PrefixedAmount}");
+
             // Block pump 4
-            Console.WriteLine("\nBlocking pump 3 (delete prefixed):");
+            Console.WriteLine("\nBlocking pump 3 (delete prefixed)");
             pumpStation.BlockPump(3);
+            Console.WriteLine($"\nPump {pump3.Id} PrefixedAmount: {pump3.PrefixedAmount}");
 
             // Check status after blocking pump 3
             Console.WriteLine("\nStatus of pumps after blocking pump 3:");
@@ -70,8 +76,12 @@ class Program
         var history = pumpStation.GetSupplyHistory();
         foreach (var supply in history)
         {
-            Console.WriteLine($"Pump ID: {supply.Pump.Id}, Date: {supply.DateTime}, " +
-                              $"Prefixed Amount: {supply.PrefixedAmount}, Amount Dispensed: {supply.AmountDispensed}");
+            var historyText = supply.PrefixedAmount.HasValue 
+                ? $"Pump ID: {supply.Pump.Id}, Date: {supply.DateTime}, " + $"Prefixed Amount: {supply.PrefixedAmount}, Amount Dispensed: {supply.AmountDispensed}" 
+                : $"Pump ID: {supply.Pump.Id}, Date: {supply.DateTime}, " + $"Amount Dispensed: {supply.AmountDispensed}";
+
+            Console.WriteLine(historyText);
+
         }
     }
 }
